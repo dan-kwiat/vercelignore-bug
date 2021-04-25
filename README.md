@@ -10,7 +10,7 @@ The whole directory is irrelevant to the build, so we put `/non-app-stuff/` in
 ### Expected behaviour
 
 When deploying with Vercel GitHub integration, Vercel does not upload the
-directory [./non-app-stuff](./non-app-stuff) (so none of its conents can be run
+directory [./non-app-stuff](./non-app-stuff) (so none of its contents can be run
 during build or runtime).
 
 ### Actual behaviour
