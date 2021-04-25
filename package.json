@@ -1,0 +1,13 @@
+{
+  "name": "vercelignore-bug",
+  "version": "1.0.0",
+  "engines": {
+    "node": "12.x"
+  },
+  "author": "dan-kwiat <dan.kwiat@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@vercel/node": "^1.9.0"
+  }
+}
