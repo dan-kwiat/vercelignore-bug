@@ -1,23 +1,22 @@
 # Vercelignore Bug
 
-We want to keep the directory [./non-app-stuff](./non-app-stuff) in git, except
-for a file within it called `sensitive-info.ts`, so we put
-`/non-app-stuff/sensitive-info.ts` in [./.gitignore](./.gitignore).
-
-The whole directory is irrelevant to the build, so we put `/non-app-stuff/` in
-[./.vercelignore](./.vercelignore).
-
 ### Expected behaviour
 
-When deploying with Vercel GitHub integration, Vercel does not upload the
-directory [./non-app-stuff](./non-app-stuff) (so none of its contents can be run
-during build or runtime).
+When deploying with Vercel GitHub integration, Vercel should not upload the
+directories listed in [./.vercelignore](./.vercelignore) and therefore none of
+the code in those directories can be run during build time or runtime.
 
 ### Actual behaviour
 
-Preview deployments follow expected behaviour, but merging to main branch
-results in a production build which fails due to a typescript error in
-[./non-app-stuff/index.ts](./non-app-stuff/index.ts). The error is because it
-tries to import `sensitive-info.ts` which wasn't uploaded to GitHub. This
-shouldn't be possible because [./non-app-stuff](./non-app-stuff) shouldn't be on
-the build server.
+Build fails due to type error in file
+[./email-templates/index.ts](./email-templates/index.ts), despite the fact
+`/email-templates/` is in [./.vercelignore](./.vercelignore)
+
+https://vercel.com/worthwhile/vercelignore-bug/FnnzvLkASjtMGB3AAUGQH1c7ZuWw
+
+```bash
+22:13:21.793  	Failed to compile.
+22:13:21.794  	./email-templates/index.ts:1:21
+22:13:21.794  	Type error: Cannot find module './sensitive-info' or its corresponding type declarations.
+22:13:21.794  	> 1 | import secrets from "./sensitive-info"
+```
