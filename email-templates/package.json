@@ -1,0 +1,17 @@
+{
+  "name": "test-email-templates",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@sendgrid/mail": "^7.4.2",
+    "dotenv": "^8.2.0",
+    "mjml": "^4.8.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.4"
+  },
+  "scripts": {
+    "send": "ts-node index.ts",
+    "render": "yarn mjml test/index.mjml -o test/index.html --config.minify"
+  }
+}

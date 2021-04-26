@@ -1,1 +1,4 @@
-/non-app-stuff/
+/db-migrations/
+/email-templates/
+/donation-reports/
+/notes
