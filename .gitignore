@@ -1,5 +1,8 @@
-/non-app-stuff/sensitive-info.ts
+/notes/
 
+/donation-reports/data
+
+/email-templates/sensitive-info.ts
 
 out
 .DS_Store
