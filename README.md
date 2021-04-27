@@ -8,9 +8,10 @@ the code in those directories can be run during build time or runtime.
 
 ### Actual behaviour
 
-Build fails due to type error in file
+Sometimes (not always) build fails due to type error in file
 [./email-templates/index.ts](./email-templates/index.ts), despite the fact
-`/email-templates/` is in [./.vercelignore](./.vercelignore)
+`email-templates` is in [./.vercelignore](./.vercelignore). Note that the same
+is true when using leading slash syntax in the ignore file: `/email-templates/`
 
 https://vercel.com/worthwhile/vercelignore-bug/FnnzvLkASjtMGB3AAUGQH1c7ZuWw
 
